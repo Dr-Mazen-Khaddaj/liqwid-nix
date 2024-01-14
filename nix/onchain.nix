@@ -427,6 +427,7 @@ in
                     nativeBuildInputs = commandLineTools;
                     shellHook = ''
                       liqwid(){ c=$1; shift; nix run .#$c -- $@; }
+                      source ./prompt.sh
                     ''
                     + config.pre-commit.installationScript;
                   };
